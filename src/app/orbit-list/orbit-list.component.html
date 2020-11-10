@@ -9,8 +9,8 @@
    </tr>
    <!-- TODO: put <tr *ngFor=""></tr> here -->
    <tr *ngFor="let satellite of satellites">
-    <th>{{satellite.name}}</th>
-    <th>{{satellite.type}}</th>
+    <th > {{satellite.name}}</th>
+    <th [class.warning] = "satellite.shouldShowWarning()">{{satellite.type}}</th>
     <th>{{satellite.operational}}</th>
     <th>{{satellite.orbitType}}</th>
     <th>{{satellite.launchDate}}</th>
