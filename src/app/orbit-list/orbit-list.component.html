@@ -1,13 +1,16 @@
-<h3>Orbit Report</h3>
-<table>
-    <tr class="header-row">
-        <th ng-click (click)='sort("name")' class="sortable">Name</th>
-        <th ng-click (click)='sort("type")' class="sortable">Type</th>
-        <th>Operational</th>
-        <th>Orbit Type</th>
-        <th>Launch Date</th>
-    </tr>
-   </tr>
+<html ng-app='myApp'>
+<body ng-controller="myController">
+    <h3>Orbit Report</h3>
+    <table matSort (matSortChange)="sortData($event)">
+        <tr class="header-row">
+            <th ng-click (click)='sort("name")' class="sortable">Name</th>
+            <th ng-click (click)='sort("type")' class="sortable">Type</th>
+            <th>Operational</th>
+            <th>Orbit Type</th>
+            <th>Launch Date</th>
+        </tr>
+        
+    
    <!-- TODO: put <tr *ngFor=""></tr> here -->
    <tr *ngFor="let satellite of satellites">
     <th > {{satellite.name}}</th>
@@ -18,3 +21,5 @@
     
 </tr>
 </table>
+</body>
+</html>
